@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Products</title>
+    <style>
+        body {
+            background: url('./farmingimage.png') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: inherit;
+            filter: blur(8px) brightness(0.8);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        body>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .site-name {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #2d7a2d;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 25px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .product-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .product-name {
+            font-weight: 600;
+            margin: 5px 0;
+        }
+
+        .product-price {
+            color: #388e3c;
+            font-weight: 500;
+        }
+
+        .product-rating {
+            color: #fbc02d;
+            margin: 5px 0;
+        }
+
+        .cart-btn {
+            background: #388e3c;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .cart-btn:hover {
+            background: #256022;
+        }
+
+        .upload-btn {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            background: #388e3c;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+            transition: background 0.2s;
+        }
+
+        .upload-btn:hover {
+            background: #256022;
+        }
+        .upload-btn {
+            background: #37852e;
+            background: linear-gradient(296deg, rgba(55, 133, 46, 1) 45%, rgba(123, 235, 82, 1) 72%);
+            border: none;
+        }
+        .cart-btn{
+                      background: #37852e;
+            background: linear-gradient(296deg, rgba(55, 133, 46, 1) 45%, rgba(123, 235, 82, 1) 72%);
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header" style="background: green;">
+        <img src="Logo.png" alt="Logo" class="logo">
+        <a style="text-decoration: none; color: black;" href="index.html" class="site-name">Harvestly</a>
+        
+    </div>
+
+    <div class="products-grid">
+        <!-- Example Product -->
+        <div class="product-card" style="background: rgba(255,255,255,0.2);">
+            <img src="tomato.png" alt="Tomato" class="product-img">
+            <div class="product-name">Tomato</div>
+            <div class="product-price">₹30/kg</div>
+            <div class="product-rating">★ 4.5</div>
+            <button class="cart-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card" style="background: rgba(255,255,255,0.2);">
+            <img src="potato.png" alt="Potato" class="product-img">
+            <div class="product-name">Potato</div>
+            <div class="product-price">₹20/kg</div>
+            <div class="product-rating">★ 4.2</div>
+            <button class="cart-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card" style="background: rgba(255,255,255,0.2);">
+            <img src="onion.png" alt="Onion" class="product-img">
+            <div class="product-name">Onion</div>
+            <div class="product-price">₹25/kg</div>
+            <div class="product-rating">★ 4.0</div>
+            <button class="cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-card" style="background: rgba(255,255,255,0.2);">
+            <img src="milk.png" alt="Milk" class="product-img">
+            <div class="product-name">Milk</div>
+            <div class="product-price">₹80/lit</div>
+            <div class="product-rating">★ 4.0</div>
+            <button class="cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-card" style="background: rgba(255,255,255,0.2);">
+            <img src="paneer.png" alt="Paneer" class="product-img">
+            <div class="product-name">Paneer</div>
+            <div class="product-price">₹300/kg</div>
+            <div class="product-rating">★ 4.5</div>
+            <button class="cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-card" style="background: rgba(255,255,255,0.2);">
+            <img src="curd.png" alt="Curd" class="product-img">
+            <div class="product-name">Curd</div>
+            <div class="product-price">₹60/lit</div>
+            <div class="product-rating">★ 4.0</div>
+            <button class="cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-card" style="background: rgba(255,255,255,0.2);">
+            <img src="apple.png" alt="apples" class="product-img">
+            <div class="product-name">Apples</div>
+            <div class="product-price">₹200/kg</div>
+            <div class="product-rating">★ 4.0</div>
+            <button class="cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-card" style="background: rgba(255,255,255,0.2);">
+            <img src="banana.png" alt="Banana" class="product-img">
+            <div class="product-name">Bananas</div>
+            <div class="product-price">₹60/dozen</div>
+            <div class="product-rating">★ 4.0</div>
+            <button class="cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-card" style="background: rgba(255,255,255,0.2);">
+            <img src="mango.png" alt="Mangoes" class="product-img">
+            <div class="product-name">Mangos</div>
+            <div class="product-price">₹300/kg</div>
+            <div class="product-rating">★ 4.0</div>
+            <button class="cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-card" style="background: rgba(255,255,255,0.2);">
+            <img src="rice.png" alt="Paddy bag" class="product-img">
+            <div class="product-name">Paddy Bag</div>
+            <div class="product-price">₹1200/75kg</div>
+            <div class="product-rating">★ 4.0</div>
+            <button class="cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-card" style="background: rgba(255,255,255,0.2);">
+            <img src="black_grams.png" alt="Black Grams" class="product-img">
+            <div class="product-name">Black Grams</div>
+            <div class="product-price">₹5000/50kg</div>
+            <div class="product-rating">★ 4.0</div>
+            <button class="cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-card" style="background: rgba(255,255,255,0.2);">
+            <img src="mirchi.png" alt="Mirchi" class="product-img">
+            <div class="product-name">Mirchi</div>
+            <div class="product-price">₹200/kg</div>
+            <div class="product-rating">★ 4.0</div>
+            <button class="cart-btn">Add to Cart</button>
+        </div>
+
+    </div>
+
+    <a href="catlog.html" style="text-decoration: none;" class="upload-btn">Upload Catalog</a>
+</body>
+
+</html>
